@@ -10,6 +10,10 @@
 
 ## Logger
 Receives log messages
+* level
+* propagate
+* filters
+* handlers
 
 ## LogRecord
 Contain information about the function, file name, full path where the log was requested,
@@ -27,10 +31,19 @@ As an example, a FileHandler will take a log record and append it to a file.
 
  The handler will then use a Formatter to turn the LogRecord into a string and emit that string.
 
+* class
+* level
+* filters
+* formatter
+
 ## Formatter
 Format a log record for output.
 Formatters are in charge of serializing the metadata-rich LogRecord into a string.
 There is a default formatter if none is provided.
+
+* format
+* date format
+* style (%,{,$)
 
 ## Filters
 Control which LogRecord should be emitted
