@@ -7,6 +7,7 @@
 4. handlers/*.py
 5. hierarchy/main.py
 6. filters.py
+7. logging_config/main.py
 
 ## Logger
 Receives log messages
