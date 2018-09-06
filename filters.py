@@ -9,3 +9,6 @@
 # Drop everything except info messages
 def info_filter(record):
     return record.levelname == 'INFO'
+
+import logging
+logging.Filter()

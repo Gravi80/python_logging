@@ -7,7 +7,7 @@ LEVELS = {'debug': logging.DEBUG,
           'critical': logging.CRITICAL}
 
 # https://docs.python.org/3/library/logging.html#logrecord-attributes
-format = "%(clientip)-8s %(asctime)s %(levelname)-8s <%(name)s> %(message)s"
+format = "%(asctime)s %(levelname)-8s <%(name)s> %(message)s"
 level = LEVELS.get('debug', logging.NOTSET)
 
 logging.basicConfig(format=format, level=level, datefmt="%Y-%m-%d %H:%M:%S")
@@ -17,3 +17,11 @@ logging.info(
     "Since we are using root logger. "
     "Its better to log things with specific loggers because they can be configured separately",
     extra=extra_args)
+
+logging.warning("Warning")
+logging.error("This is an error")
+
+# Add custom log level
+logging.addLevelName(60, 'CUSTOM_LEVEL')
+print(logging.getLevelName('ERROR'))
+print(logging.getLevelName('CUSTOM_LEVEL'))

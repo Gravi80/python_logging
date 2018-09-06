@@ -20,3 +20,7 @@ logger.info("Info message")
 logger.error("Error message")
 
 # python handlers/multiple.py
+
+
+# Delivers messages to their destinations. It is responsible for taking message from the logger
+# and sending it to log_file.log stdout etc.
