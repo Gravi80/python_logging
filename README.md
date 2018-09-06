@@ -62,3 +62,4 @@ Users can declare their own filters as objects using a filter <b>method</b> that
 * https://www.youtube.com/watch?v=24_4WWkSmNo
 * https://www.youtube.com/watch?v=DxZ5WEo4hvU
 * https://opensource.com/article/17/9/python-logging
+* https://www.youtube.com/watch?v=QQzw5f4coSU

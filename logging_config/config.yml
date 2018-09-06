@@ -36,3 +36,4 @@ formatters:
   simpleFormatter:
     format: '%(name)s %(asctime)s %(levelname)s %(message)s'
     datefmt: '%d/%m/%Y %H:%M:%S'
+    style: '%'

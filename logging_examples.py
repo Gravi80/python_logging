@@ -20,6 +20,7 @@ logging.info(
 
 logging.warning("Warning", extra=extra_args)
 logging.error("This is an error", extra=extra_args)
+logging.info("String interpolation with '%s'", 'param1', extra=extra_args, stack_info=True)
 
 # Add custom log level
 logging.addLevelName(60, 'CUSTOM_LEVEL')

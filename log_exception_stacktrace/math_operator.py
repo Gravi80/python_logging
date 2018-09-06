@@ -30,6 +30,7 @@ def divide(x, y):
     try:
         result = x / y
     except ZeroDivisionError:
-        logger.exception('Tried by zero!')
+        logger.info('Tried dividing by zero!', exc_info=True)
+        logger.exception('Tried dividing by zero!')
     else:
         return result
