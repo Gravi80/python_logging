@@ -1,0 +1,38 @@
+version: 1
+disable_existing_loggers: true
+# Configuring the default (root) logger is highly recommended
+root:
+  level: !!python/name:logging.NOTSET
+  handlers: [console]
+loggers:
+  # Logging from my application
+  myapp:
+    level: !!python/name:logging.INFO
+    handlers: [console]
+    qualname: myapp
+    propagate: false
+  myapp.api:
+    level: !!python/name:logging.INFO
+    handlers: [logfile]
+    qualname: myapp.api
+    propagate: false
+  myapp.cli:
+    level: !!python/name:logging.INFO
+    handlers: [console]
+    qualname: myapp.cli
+    propagate: false
+handlers:
+  logfile:
+    class: logging.FileHandler
+    filename: logging_config/logs/sample.log
+    formatter: simpleFormatter
+    level: !!python/name:logging.NOTSET
+  console:
+    class: logging.StreamHandler
+    stream: ext://sys.stdout
+    formatter: simpleFormatter
+    level: !!python/name:logging.NOTSET
+formatters:
+  simpleFormatter:
+    format: '%(name)s %(asctime)s %(levelname)s %(message)s'
+    datefmt: '%d/%m/%Y %H:%M:%S'
