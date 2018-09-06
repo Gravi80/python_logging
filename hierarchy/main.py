@@ -1,7 +1,7 @@
 import myapp.api
 import myapp.cli
 
-print("You are seeing duplicate message because "
+print("\n\nYou are seeing duplicate message because "
       "messages logged in 'myapp.api' and 'myapp.cli' are also being propagated to "
       "the handler present in 'myapp' logger. Therefore all handlers should be defined only "
       "in the base module/logger i.e 'myapp.__init__.py'")
