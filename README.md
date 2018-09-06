@@ -5,9 +5,10 @@
 3. multiple_loggers/main.py
 4. log_exception_stacktrace/main.py
 4. handlers/*.py
-5. hierarchy/main.py
-6. filters.py
-7. logging_config/main.py
+5. custom_formatter.py
+6. hierarchy/main.py
+7. filters.py
+8. logging_config/main.py
 
 ## Logger
 Receives log messages
