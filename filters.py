@@ -10,5 +10,38 @@
 def info_filter(record):
     return record.levelname == 'INFO'
 
+
 import logging
-logging.Filter()
+
+
+class ContextFilter(logging.Filter):
+    def filter(self, record):
+        record.name = "new name"
+        record.some_param = "some_param"
+        return True
+
+
+handler = logging.StreamHandler()
+handler.formatter = logging.Formatter("%(some_param)s %(name)s %(message)s")
+handler.addFilter(ContextFilter())
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+
+logger.info("ContextFilter")
+
+
+# Drop everything except info messages
+class InfoFilter(logging.Filter):
+    def filter(self, record):
+        return record.levelname == 'INFO'
+
+
+handler = logging.StreamHandler()
+handler.formatter = logging.Formatter("%(some_param)s %(name)s %(message)s")
+handler.addFilter(InfoFilter())
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+
+logger.debug("InfoFilter")
